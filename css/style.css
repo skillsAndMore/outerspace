@@ -1,0 +1,478 @@
+/* Reset */
+
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+
+	body {
+		line-height: 1;
+	}
+
+	ol, ul {
+		list-style: none;
+	}
+
+	blockquote, q {
+		quotes: none;
+	}
+
+	blockquote:before, blockquote:after, q:before, q:after {
+		content: '';
+		content: none;
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	body {
+		-webkit-text-size-adjust: none;
+	}
+
+/* Elementi */
+
+html {
+	background: url(../images/pattern.jpg) repeat;
+	background-attachment: fixed;
+}
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	background-origin: center;
+	color: #FFF;
+}
+
+a {
+	color: cornflowerblue;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #CCC;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 68px;
+}
+
+h2 {
+	font-size: 48px;
+}
+
+h3 {
+	font-size: 32px;
+}
+
+h4 {
+	font-size: 28px;
+}
+
+h5 {
+	font-size: 22px;
+}
+
+h6 {
+	font-size: 18px;
+}
+
+p {
+	padding: 20px;
+}
+
+header, section {
+	background: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.8),rgba(0,0,0,0.6),rgba(0,0,0,0.4),rgba(0,0,0,0.2));
+}
+
+section.odd {
+	background: #000;
+}
+
+footer {
+	text-align: center;
+	background-color: #000;
+	padding: 40px;
+}
+
+footer ul, footer ul li{
+	text-align: center;
+	display: inline-block;
+}
+
+section {
+	display: block;
+	overflow: hidden;
+}
+
+.content {
+	padding: 10% 10% 0;
+}
+
+.cta {
+	width: 50%;
+	display: block;
+	border: 2px solid #FFF;
+	background-color: #FFF;
+	color: #000;
+	font-size: 24px;
+	line-height: 2.2;
+	text-align: center;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+
+.cta.ghost {
+	background-color: transparent;
+	color: #FFF;
+}
+
+.cta.color {
+	background-color: cornflowerblue;
+	border-color: cornflowerblue;
+}
+
+.cta.ghost.color {
+	background-color: transparent;
+	color: cornflowerblue;
+	border-color: cornflowerblue;
+}
+
+.cta:hover, .cta.ghost:hover {
+	background-color: cornflowerblue;
+	border-color: cornflowerblue;
+	color: #FFF;
+}
+
+.cta.color:hover, .cta.ghost.color:hover {
+	background-color: #FFF;
+	border-color: #FFF;
+	color: #000;
+}
+
+/* Header */
+
+header {
+	min-height: 600px;
+}
+
+
+header .imagecontainer {
+	filter: invert(100%);
+	width: 30%;
+	float: right;
+}
+
+header a {
+	color: #CCC;
+}
+
+header .imagecontainer .image-background {
+	border-radius: 100%;
+	/*background: radial-gradient(rgba(0,0,0,0),rgba(0,0,0,0.0),rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,1),rgba(0,0,0,1));
+	*/
+	background: none;
+	padding: 5%;
+}
+
+header .imagecontainer img {
+	padding: 2%;
+}
+
+header .content p {
+	max-width: 700px;
+	border-top: 2px solid cornflowerblue;
+	padding-top: 40px;
+}
+
+header h1 {
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+header .content h3 {
+	color: #FFF;
+	padding-top: 40px;
+	padding-left: 20px;
+}
+
+header .content i {
+    width: 72px;
+    height: 72px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+header .content i:hover {
+    background-color: #6495ED;
+}
+
+header .content i::before {
+	margin: 0;
+	font-size: 72px;
+}
+
+header .content i.giove:hover {
+	background-color: #AB480B;
+}
+
+header .content i.mercurio:hover {
+	background-color: #95481C;
+}
+
+header .content i.venere:hover {
+	background-color: #FEDB7B;
+}
+
+header .content i.venere:hover::before {
+	color: #6d6d6d;
+}
+
+header .content i.marte:hover {
+	background-color: #640403;
+}
+
+header .content i.urano:hover {
+	background-color: #05203F;
+}
+
+header .content i.saturno:hover {
+	background-color: #625C45;
+}
+
+/* Sections */
+
+section .content {
+	padding-top: 5%;
+}
+
+section .content p, section .content ul {
+	border-top: 2px solid cornflowerblue;
+	padding-top: 40px;
+}
+
+section .content p {
+	max-width: 700px;
+}
+
+section .imagecontainer {
+	filter: invert(100%);
+	width: 30%;
+	float: right;
+	padding: 5%;
+}
+
+ul.tabella li {
+    width: 250px;
+    text-align: center;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+ul.tabella li i {
+    display: block;
+    padding-bottom: 12px;
+}
+
+/* Bottone To Top */
+
+.to-top {
+	position: fixed;
+	width: 90px;
+	height: 90px;
+	bottom: 5%;
+	right: 10%;
+	border-radius: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display:none;
+}
+
+i.to-top::before {
+	color: #FFF;
+	padding: 8px;
+	font-size: 72px;
+	margin: 0;
+}
+
+/* Space Icons */
+
+@font-face {
+	font-family: "Spaceicon";
+	src: url("../font/spaceicon.eot");
+	src: url("../font/spaceicon.eot#iefix") format("embedded-opentype"),
+	url("../font/spaceicon.woff") format("woff"),
+	url("../font/spaceicon.ttf") format("truetype"),
+	url("../font/spaceicon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="spaceicon-"]:before, [class*=" spaceicon-"]:before,
+[class^="spaceicon-"]:after, [class*=" spaceicon-"]:after {   
+	font-family: Spaceicon;
+    font-size: 48px;
+	font-style: normal;
+	margin-left: 20px;
+	font-weight: 300;
+}.spaceicon-alien18:before {
+	content: "\e000";
+}
+.spaceicon-alien19:before {
+	content: "\e001";
+}
+.spaceicon-astronauts:before {
+	content: "\e002";
+}
+.spaceicon-astronomy5:before {
+	content: "\e003";
+}
+.spaceicon-astronomy6:before {
+	content: "\e004";
+}
+.spaceicon-astronomy7:before {
+	content: "\e005";
+}
+.spaceicon-astronomy8:before {
+	content: "\e006";
+}
+.spaceicon-extraterrestrial:before {
+	content: "\e007";
+}
+.spaceicon-guns6:before {
+	content: "\e008";
+}
+.spaceicon-night6:before {
+	content: "\e009";
+}
+.spaceicon-radars2:before {
+	content: "\e00a";
+}
+.spaceicon-robot43:before {
+	content: "\e00b";
+}
+.spaceicon-rocket-ship3:before {
+	content: "\e00c";
+}
+.spaceicon-satellite2:before {
+	content: "\e00d";
+}
+.spaceicon-satellite3:before {
+	content: "\e00e";
+}
+.spaceicon-satellites4:before {
+	content: "\e00f";
+}
+.spaceicon-satellite-station1:before {
+	content: "\e010";
+}
+.spaceicon-science-fiction1:before {
+	content: "\e011";
+}
+.spaceicon-science-fiction:before {
+	content: "\e012";
+}
+.spaceicon-solar-system1:before {
+	content: "\e013";
+}
+.spaceicon-solar-system2:before {
+	content: "\e014";
+}
+.spaceicon-solar-system3:before {
+	content: "\e015";
+}
+.spaceicon-solar-system4:before {
+	content: "\e016";
+}
+.spaceicon-solar-system6:before {
+	content: "\e017";
+}
+.spaceicon-space2:before {
+	content: "\e018";
+}
+.spaceicon-space56:before {
+	content: "\e019";
+}
+.spaceicon-space57:before {
+	content: "\e01a";
+}
+.spaceicon-space58:before {
+	content: "\e01b";
+}
+.spaceicon-space59:before {
+	content: "\e01c";
+}
+.spaceicon-space-ship3:before {
+	content: "\e01d";
+}
+.spaceicon-stars71:before {
+	content: "\e01e";
+}
+.spaceicon-star-wars:before {
+	content: "\e01f";
+}
+.spaceicon-sunny48:before {
+	content: "\e020";
+}
+.spaceicon-telescopes3:before {
+	content: "\e021";
+}
+.spaceicon-transport290:before {
+	content: "\e022";
+}
+.spaceicon-transport291:before {
+	content: "\e023";
+}
+.spaceicon-transport295:before {
+	content: "\e024";
+}
+.spaceicon-transport299:before {
+	content: "\e025";
+}
+.spaceicon-transport300:before {
+	content: "\e026";
+}
+.spaceicon-transport305:before {
+	content: "\e027";
+}
+.spaceicon-transport306:before {
+	content: "\e028";
+}
+.spaceicon-transport307:before {
+	content: "\e029";
+}
+.spaceicon-transport308:before {
+	content: "\e02a";
+}
+.spaceicon-transport309:before {
+	content: "\e02b";
+}
+.spaceicon-transport312:before {
+	content: "\e02c";
+}
+.spaceicon-transport314:before {
+	content: "\e02d";
+}
+.spaceicon-transport315:before {
+	content: "\e02e";
+}
+.spaceicon-universe2:before {
+	content: "\e02f";
+}
+.spaceicon-vehicle101:before {
+	content: "\e030";
+}
