@@ -1,8 +1,6 @@
 #Outerspace
 Una catena alberghiera spaziale. Basato su Iodine HTML5 Boilerplate
 
-[TOC]
-
 ##Changelog
 
 - **Versione 0.4.0** Inserite Variazioni di colore e ghost per CTA e Select (milestone)
