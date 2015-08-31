@@ -14,5 +14,6 @@ Una catena alberghiera spaziale. Basato su Iodine HTML5 Boilerplate
 
 - Suddividere in blocchi gli elementi HTML in una struttura cartelle utile per porting a boilerplate
 - Rendere tutti gli elementi costruiti perfettamente responsive
+- Inserire modulo di contatti
 - ~~Inserire variazioni colore e ghost per CTA e Select~~
 - ~~Inserire wow.js, animate.css, smooth scroll~~
