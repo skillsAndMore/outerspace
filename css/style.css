@@ -71,12 +71,15 @@ html {
 	background-attachment: fixed; 				   /* Sfondo fisso o scorrevole */
 }
 
-body, input {
+body, input, span, select, option, optgroup {
 	font-family: 'Ubuntu', sans-serif;
-	font-weight: 400;
+}
+
+body {
 	font-size: 18px;
-	background-origin: center;
 	color: #FFF;
+	font-weight: 400;
+	background-origin: center;
 }
 
 a {
