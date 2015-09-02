@@ -30,6 +30,9 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -69,9 +72,10 @@
 html {
 	background: url(../images/pattern.jpg) repeat; /* Link allo sfondo */
 	background-attachment: fixed; 				   /* Sfondo fisso o scorrevole */
+	z-index: 1;
 }
 
-body, input, span, select, option, optgroup {
+body, input, textarea, span, select, option, optgroup {
 	font-family: 'Ubuntu', sans-serif;
 }
 
@@ -80,6 +84,7 @@ body {
 	color: #FFF;
 	font-weight: 400;
 	background-origin: center;
+	z-index: 2;
 }
 
 a {
@@ -124,82 +129,95 @@ p {
 	padding: 20px;
 }
 
+label {
+	display: block;
+	padding-bottom: 6px;
+}
+
 header, section {
 	/* Invertire Gradiente nei schemi chiari. Es: rgba(255,255,255,0.4); */
 	background: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.8),rgba(0,0,0,0.6),rgba(0,0,0,0.4),rgba(0,0,0,0.2));
+	position: relative;
 }
 
 .content {
 	padding: 10% 10% 0;
+	z-index: 3;
 }
 
 /** Call To Action, Bottoni e Input **/
 
-.cta, input {
-	width: 50%;
+.cta, input, textarea {
+	width: 100%;
 	display: block;
 	border: 2px solid #FFF;
 	background-color: #FFF;
 	color: #000;
-	font-size: 24px;
+	font-size: 20px;
 	line-height: 2.2;
 	text-align: center;
-	margin-bottom: 20px;
-	margin-left: 20px;
+	margin-bottom: 5px;
+	box-sizing: border-box;
 }
 
-.cta.ghost, input.ghost {
+textarea {
+	text-align: left;
+	padding: 20px;
+	line-height: 1.2;
+	font-size: 18px;
+}
+
+.cta {
+	font-size: 22px;
+}
+
+.cta.ghost, input.ghost, textarea.ghost {
 	background-color: transparent;
 	color: #FFF;
 }
 
-.cta.color, input.color {
+.cta.color, input.color, textarea.color {
 	background-color: cornflowerblue;
 	border-color: cornflowerblue;
 }
 
-.cta.ghost.color, input.ghost.color {
+.cta.ghost.color, input.ghost.color, textarea.ghost.color {
 	background-color: transparent;
 	color: cornflowerblue;
 	border-color: cornflowerblue;
 }
 
-.cta:hover, .cta.ghost:hover, input:focus, input:active {
+.cta:hover, .cta.ghost:hover, input:focus, input:active, textarea:focus, textarea:active {
 	background-color: cornflowerblue;
 	border-color: cornflowerblue;
 	color: #FFF;
 }
 
- input[type=text]:focus, input[type=email]:focus  {
+ input[type=text]:focus, input[type=email]:focus, textarea:focus  {
 	text-align: left;
 	padding-left: 10px;
 }
 
-.cta.color:hover, .cta.ghost.color:hover, input.ghost.color:active, input.ghost.color:focus {
+.cta.color:hover, .cta.ghost.color:hover, input.ghost.color:active, input.ghost.color:focus, textarea.ghost.color:focus, textarea.ghost.color:active {
 	background-color: #FFF;
 	border-color: #FFF;
 	color: #000;
 }
 
 .select-container {
-   width: 50%;
+   width: 100%;
    height: 48px;
    overflow: hidden;
    background: url(../images/select.png) no-repeat right #FFF;
    border: 2px solid #FFF;
-   margin-bottom: 20px;
-}
-
-.select-container.centrato {
-	margin-bottom: 20px;
+   margin-bottom: 5px;
 }
 
 .select-container select {
    background: transparent;
    width: 100%;
    padding: 8px;
-   font-size: 18px;
-   font-weight: 700;
+   font-size: 20px;
    line-height: 1.2;
    border: 0;
    border-radius: 0;
@@ -207,14 +225,17 @@ header, section {
    appearance: none;
    -webkit-appearance: none;
    -moz-appearance: none;
+   text-align: center;
 }
 
-.select-container select option {
-	font-weight: 400;
+.select-container select:active, .select-container select:focus {
+	text-align: left;
 }
 
 .select-container select option, .select-container select optgroup {
 	padding: 10px;
+	text-align: left;
+	font-size: 18px;
 }
 
 .select-container.ghost {
@@ -260,6 +281,8 @@ header, section {
 	margin: 0;
 	padding: 0px;
 	float: right;
+	border-top: 2px solid cornflowerblue;
+	padding-top: 40px;
 }
 
 .newsletter-container form input {
@@ -269,6 +292,18 @@ header, section {
 
 .newsletter-container form input.cta {
 	color: #FFF;
+}
+
+/* Modulo Contatti */
+
+.contatti {
+	width: 60%;
+	background-color: #000;
+	padding: 30px;
+}
+
+section .content form.contatti {
+	border: none;
 }
 
 /* Allineamento e pluizia */
@@ -319,12 +354,16 @@ header .imagecontainer .image-background {
 	padding: 5%;
 }
 
+header .imagecontainer, header h1, header p {
+	box-sizing: unset;
+}
+
 header .imagecontainer img {
 	padding: 2%;
 }
 
 header .content p, header .content ul {
-	max-width: 700px;
+	max-width: 750px;
 	border-top: 2px solid cornflowerblue;
 	padding-top: 40px;
 }
@@ -405,13 +444,13 @@ section .content {
 	padding-top: 5%;
 }
 
-section .content p, section .content ul, section .content form {
+section .content p, section .content ul {
 	border-top: 2px solid cornflowerblue;
 	padding-top: 40px;
 }
 
 section .content p {
-	max-width: 700px;
+	max-width: 70%;
 }
 
 section .imagecontainer {
@@ -421,6 +460,15 @@ section .imagecontainer {
 	width: 30%;
 	float: right;
 	padding: 5%;
+	box-sizing: unset;
+}
+
+section .content h1, section .content p {
+	box-sizing: unset;
+}
+
+section .content a.cta {
+	margin-bottom: 40px;
 }
 
 ul.lista li {
@@ -433,6 +481,13 @@ ul.lista li {
 ul.lista li i {
     display: block;
     padding-bottom: 12px;
+}
+
+/* Prenota */
+
+section#prenota .content p {
+	padding: 0;
+	padding-top: 20px;
 }
 
 /* Footer */
@@ -467,12 +522,13 @@ footer ul.icons .genericon::before {
 	background-color: rgba(0,0,0,0.5);
 	display:none;
 	border: 10px solid rgba(0,0,0,0);
+	z-index: 99999;
 }
 
 i.to-top::before {
 	color: #FFF;
-	padding: 8px;
-	font-size: 72px;
+	padding: 6px;
+	font-size: 60px;
 	margin: 0;
 }
 
